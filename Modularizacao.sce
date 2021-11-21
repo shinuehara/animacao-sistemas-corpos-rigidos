@@ -1,6 +1,5 @@
 //MODULARIZAÇÃO
 diretorio = pwd()
-exec(diretorio + '\eulerZx1z2.sci', -1);
 exec(diretorio + '\transver.sci', -1);
 exec(diretorio + '\genpat.sci', -1);
 

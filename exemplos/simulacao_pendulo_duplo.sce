@@ -1,9 +1,3 @@
-
-//xdel(winsid());
-
-//simulação do movimento do giroscópio
-//condições iniciais
-
 // Definição dos parâmetros e propriedades
 l1 = 1 //m
 m1 = 1 //kg
@@ -19,14 +13,16 @@ A4 = g/l2
 
 // Construção do vetor tempo
 t0=0
-tf=10
-frames_por_segundo = 30
+tf=2
+dt=0.05
+frames_por_segundo = 10
 nt=frames_por_segundo*tf
-t   = linspace(t0,tf,nt)'
-
+//t   = linspace(t0,tf,nt)'
+t = t0:dt:tf
+t = t'
 // Condições arbitrárias
 //cuspide
-phi0        = zero + 15*%pi/180
+phi0        = zero + 45*%pi/180
 theta0      = zero + 0*%pi/180
 dphi0       = zero + 0*%pi/180
 dtheta0     = zero + 0*%pi/180

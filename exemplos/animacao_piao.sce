@@ -3,6 +3,7 @@ clc
 
 diretorio = pwd()
 
+exec(diretorio + '\eulerZx1z2.sci', -1);
 exec(diretorio + '\exemplos\simulacao_piao.sce', -1);
 exec(diretorio + '\Modularizacao.sce', -1);
 

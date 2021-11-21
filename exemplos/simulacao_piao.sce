@@ -1,13 +1,3 @@
-//SCRIPT PARA A REALIZAÇÃO DOS CÁLCULOS DO MODELO
-//constantes        -> define principais variáveis
-//simulacao_v0      -> faz a simulação para determinadas condições iniciais
-//Nutacao           -> faz o calculo da faixa de ângulos Theta
-//trajetoria_C      -> faz a nova simulação com o novo Theta0
-//anima_piao        -> recebe os deslocamentos angulares em função do tempo e realiza a animação do movimento
-
-//xdel(winsid());
-
-
 // Definição dos parâmetros e propriedades
 l   = 1                   //m - comprimento da haste
 r   = 0.1                 //m - raio do disco

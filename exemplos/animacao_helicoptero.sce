@@ -102,11 +102,12 @@ faces_laterias_helice = [
 
 // Construção do vetor tempo
 t0=0
-tf=20
+tf=2
 frames_por_segundo = 30
-nt=frames_por_segundo*tf
-t   = linspace(t0,tf,nt)'
-
+dt = 0.005
+//nt=frames_por_segundo*tf
+//t   = linspace(t0,tf,nt)'
+t = (t0:dt:tf)'
 // helicoptero
 position_helicoptero = [0*t, 0*t, 0*t];   // Position data
 angles_helicoptero = [0*t, 0*t, 0*t]; // Orientation data (Zx1z2 Euler angles)
