@@ -2,7 +2,6 @@
 diretorio = pwd()
 exec(diretorio + '\transver.sci', -1);
 exec(diretorio + '\genpat.sci', -1);
-
 function resposta = gera_corpo(vertices_O, faces, translacao_O, rotacao, pontos_rastreados, funcao_rotacao, deslocamento_relativo)
     
     if ~exists("deslocamento_relativo","local") then
@@ -34,8 +33,12 @@ function resposta = gera_corpo(vertices_O, faces, translacao_O, rotacao, pontos_
 endfunction
 
 
-function exibe_animacao(figura, lista_de_corpos, rotation_angles, data_bounds)
-    
+function exibe_animacao(figura, lista_de_corpos, rotation_angles, data_bounds, filename)
+    if exists("filename","local") then
+        outgif = filename+'.gif';
+        mdelete(outgif);
+        idGif = animaGIF(gcf(), outgif, 10, 0);
+    end
     for j = 1: length(lista_de_corpos(1,:))
         patch = lista_de_corpos(:,j)
         pat(j) = plot3d(patch.x(1), patch.y(1), patch.z(1))
@@ -49,13 +52,15 @@ function exibe_animacao(figura, lista_de_corpos, rotation_angles, data_bounds)
     axes = gca();
     axes.isoview = "on";
     axes.box = "off";
-    axes.rotation_angles = rotation_angles;
+    if exists("rotation_angles","local") then
+        axes.rotation_angles = rotation_angles;
+    end
     
     if exists("data_bounds","local") then
         axes.data_bounds = data_bounds;
     end
     xgrid;
-
+    
     for i = 2:length(lista_de_corpos(:,1))
         drawlater();
         for j = 1: length(lista_de_corpos(1,:))
@@ -65,5 +70,11 @@ function exibe_animacao(figura, lista_de_corpos, rotation_angles, data_bounds)
             pat(j).data.z = patch.z(i);
         end
         drawnow();
+        if exists("filename","local") then
+            idGif = animaGIF(gcf(), idGif);
+        end
+    end
+    if exists("filename","local") then
+        animaGIF(idGif);
     end
 endfunction

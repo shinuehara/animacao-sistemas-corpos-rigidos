@@ -154,7 +154,7 @@ h_fig.background = 8;
 drawlater();
 color_index = 4 
 data_bounds = [-L, -L, -2*a; L L, 7*a]
-exibe_animacao(h_fig, patches, [45, 67],data_bounds)
+exibe_animacao(h_fig, patches, [45, 67],data_bounds,'helicoptero_video')
 //exibe_animacao(h_fig, patches, [45, 67])
 
 
